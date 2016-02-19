@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-2-19 23:47:13 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.carrey.HibernateTest.dojo.Event" table="EVENT">
+        <id name="event_id" type="int">
+            <column name="EVENT_ID" />
+            <generator class="increment" />
+        </id>
+        <property name="event_date" type="timestamp" >
+            <column name="EVENT_DATE" />
+        </property>
+        <property name="event_type" type="java.lang.String">
+            <column name="EVENT_TYPE" />
+        </property>
+        <property name="event_desc" type="java.lang.String">
+            <column name="event_desc" />
+        </property>
+    </class>
+</hibernate-mapping>
