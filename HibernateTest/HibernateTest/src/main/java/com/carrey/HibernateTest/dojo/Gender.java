@@ -2,8 +2,27 @@ package com.carrey.HibernateTest.dojo;
 
 public enum Gender {
 	
-	MAN,
-	WOMEN,
-	NOT_SURE
+	MALE('M'),
+	FEMALE('F');
+	
+	private final char code;
+	
+	private Gender(char code){
+		this.code = code;
+	}
+	
+	public static Gender fromCode(char code) throws Exception{
+		if(code == 'M' || code == 'm'){
+			return MALE;
+		}else if(code =='F' || code == 'f'){
+			return FEMALE;
+		}
+		
+		throw new Exception(code + " not supported.");
+	}
+	
+	public char getCode(){
+		return code;
+	}
 
 }

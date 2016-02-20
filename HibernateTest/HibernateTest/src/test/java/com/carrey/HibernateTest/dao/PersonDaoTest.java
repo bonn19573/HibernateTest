@@ -11,12 +11,16 @@ public class PersonDaoTest extends AbstractTest {
 
 	@Test
 	public void testInsert() {
-		Person person = new Person("GR",Gender.MAN);
-		Person person2 = new Person("czj",Gender.WOMEN);
-		Person person3 = new Person("xiaoyao",Gender.NOT_SURE);
+		Person person = new Person("GR",Gender.MALE);
+		Person person2 = new Person("czj",Gender.FEMALE);
 		dao.insert(person);
 		dao.insert(person2);
-		dao.insert(person3);
+	}
+	
+	@Test
+	public void testGet(){
+		Person person = dao.get(24);
+		System.out.println(person);
 	}
 
 }
