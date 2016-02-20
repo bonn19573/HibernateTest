@@ -33,6 +33,7 @@
 		<mapping resource="com/carrey/HibernateTest/dojo/Event.hbm.xml"/>
 		<mapping class="com.carrey.HibernateTest.Employee"/>
 		<mapping class="com.carrey.HibernateTest.Certificate"/>
+		<mapping class="com.carrey.HibernateTest.dojo.Person"/>
 
 	</session-factory>
 </hibernate-configuration>
