@@ -2,23 +2,42 @@ package com.carrey.HibernateTest;
 
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
+@Entity
 public class Employee {
 	@Id @GeneratedValue
 	@Column(name = "id")
 	private Integer id;
+	@Column(name = "first_name")
 	private String firstName;
+	@Column(name="last_name")
 	private String lastName;
 	private int salary;
 	
+	@OneToMany(fetch=FetchType.LAZY,mappedBy="employee")
 	private Set<Certificate> certificates;
 
 	public Employee() {
 	}
 	
+	
+	
+	public Employee(String firstName, String lastName, int salary) {
+		super();
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.salary = salary;
+	}
+
+
+
 	@Override
 	public int hashCode() {
 		return id != null ? id.hashCode() : 0;
@@ -39,12 +58,6 @@ public class Employee {
 
 		final Employee other = (Employee) o;
 		return id.equals( other.id );
-	}
-
-	public Employee(String fname, String lname, int salary) {
-		this.firstName = fname;
-		this.lastName = lname;
-		this.salary = salary;
 	}
 
 

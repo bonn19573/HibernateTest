@@ -31,6 +31,8 @@
 		<!-- <mapping resource="Employee.hbm.xml" /> -->
 		<mapping resource="Student.hbm.xml" />
 		<mapping resource="com/carrey/HibernateTest/dojo/Event.hbm.xml"/>
+		<mapping class="com.carrey.HibernateTest.Employee"/>
+		<mapping class="com.carrey.HibernateTest.Certificate"/>
 
 	</session-factory>
 </hibernate-configuration>

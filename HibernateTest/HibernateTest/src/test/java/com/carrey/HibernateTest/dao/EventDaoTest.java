@@ -2,91 +2,66 @@ package com.carrey.HibernateTest.dao;
 
 import java.util.Date;
 
-import org.hibernate.Session;
-import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Assert;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 import com.carrey.HibernateTest.dojo.Event;
-import com.carrey.HibernateTest.util.HibernateUtil;
 
-public class EventDaoTest {
+public class EventDaoTest extends AbstractTest {
 	
-	private static Session session;
-	private static EventDao dao;
-	
-	@BeforeClass
-	public static void beforeClass(){
-		session = HibernateUtil.openSession();
-		dao = new EventDao();
-	}
-	
-	@AfterClass
-	public static void afterClass(){
-		HibernateUtil.closeSession(session);
-		HibernateUtil.closeSessionFactory();
-	}
-	
-	@Before
-	public void before(){
-		session.beginTransaction();
-	}
-	
-	@After
-	public void after(){
-		session.getTransaction().commit();
-	}
+	private EventDao dao = new EventDao();
 
 	@Test
 	public void testInsert() {
-		Event e = new Event(new Date(),"Type1","first event");
-		dao.insert(e, session);
 		
-		Event e2 = dao.get(e.getEvent_id(), session);
-		
+		System.out.println("start");
+		Event e = new Event(new Date(), "Type1", "first event");
+		dao.insert(e);
+
+		System.out.println(e);
+		Event e2 = dao.get(e.getEvent_id());
+
 		System.out.println(e2);
-		
+
 		Assert.assertEquals(e, e2);
 	}
 
 	@Test
 	public void testDelete() {
-		Event e = new Event(new Date(),"Type1","first event");
-		dao.insert(e, session);
-		
-		dao.delete(e, session);
-		
-		Event e2 = dao.get(e.getEvent_id(), session);
-		
+		Event e = new Event(new Date(), "Type1", "first event");
+		dao.insert(e);
+
+		dao.delete(e);
+
+		Event e2 = dao.get(e.getEvent_id());
+
 		Assert.assertEquals(null, e2);
 	}
 
 	@Test
 	public void testUpdate() {
-		Event e = new Event(new Date(),"Type1","first event");
-		dao.insert(e, session);
-		
+		Event e = new Event(new Date(), "Type1", "first event");
+		dao.insert(e);
+
 		e.setEvent_type("Type 2");
-		
-		dao.update(e, session);
-		
-		Event e2 = dao.get(e.getEvent_id(), session);
-		
+
+		dao.update(e);
+
+		Event e2 = dao.get(e.getEvent_id());
+
 		Assert.assertEquals("Type 2", e2.getEvent_type());
-		
+
 	}
 
 	@Test
 	public void testGet() {
-		
-		Event e = new Event(new Date(),"Type1","first event");
-		dao.insert(e, session);
-		
-		Event e2 = dao.get(e.getEvent_id(), session);	
-		
+
+		Event e = new Event(new Date(), "Type1", "first event");
+		dao.insert(e);
+
+		System.out.println(e);
+		Event e2 = dao.get(e.getEvent_id());
+
 		Assert.assertEquals(e, e2);
 	}
 

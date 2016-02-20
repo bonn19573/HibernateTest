@@ -7,6 +7,7 @@ import org.hibernate.cfg.Configuration;
 public class HibernateUtil {
 	
 	private static SessionFactory factory = null;
+	private static Session session = null;
 	
 	public static SessionFactory getSessionFactory(){
 		if(factory == null){
@@ -15,13 +16,16 @@ public class HibernateUtil {
 		return factory;
 	}
 	
-	public static Session openSession(){
-		return getSessionFactory().openSession();
+	public static Session getSession(){
+		if(session== null){
+			session = getSessionFactory().openSession();
+		}
+		return session;
 	}
 	
-	public static Session getCurrentSession(){
+/*	public static Session getCurrentSession(){
 		return getSessionFactory().getCurrentSession();
-	}
+	}*/
 	
 	public static void closeSessionFactory(){
 		getSessionFactory().close();
