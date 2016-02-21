@@ -17,12 +17,16 @@ import org.hibernate.annotations.ColumnTransformer;
 import org.hibernate.annotations.Formula;
 import org.hibernate.annotations.Generated;
 import org.hibernate.annotations.GenerationTime;
+import org.hibernate.annotations.NaturalId;
 
 import com.carrey.HibernateTest.converter.GenderConverter;
 
 @Entity
 @Table(name = "person")
 public class Person {
+	
+	@NaturalId
+	private String ssn;
 
 	@Id
 	@GeneratedValue
@@ -172,4 +176,30 @@ public class Person {
 				+ createDateTime + ", createDbDateTime=" + createDbDateTime + ", updateDbDateTime=" + updateDbDateTime + ", bornDate=" + bornDate + ", age=" + age + "]";
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((ssn == null) ? 0 : ssn.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Person other = (Person) obj;
+		if (ssn == null) {
+			if (other.ssn != null)
+				return false;
+		} else if (!ssn.equals(other.ssn))
+			return false;
+		return true;
+	}
+
+	
 }

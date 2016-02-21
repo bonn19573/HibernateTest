@@ -5,6 +5,7 @@ import java.util.Set;
 
 import org.junit.Test;
 
+import com.carrey.HibernateTest.AbstractTest;
 import com.carrey.HibernateTest.dojo.Certificate;
 import com.carrey.HibernateTest.dojo.Employee;
 

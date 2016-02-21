@@ -1,4 +1,4 @@
-package com.carrey.HibernateTest.dao;
+package com.carrey.HibernateTest;
 
 import org.hibernate.Session;
 import org.junit.After;

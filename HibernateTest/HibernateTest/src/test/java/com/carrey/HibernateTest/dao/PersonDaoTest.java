@@ -5,6 +5,7 @@ import java.util.Date;
 
 import org.junit.Test;
 
+import com.carrey.HibernateTest.AbstractTest;
 import com.carrey.HibernateTest.dojo.Gender;
 import com.carrey.HibernateTest.dojo.Name;
 import com.carrey.HibernateTest.dojo.Person;
