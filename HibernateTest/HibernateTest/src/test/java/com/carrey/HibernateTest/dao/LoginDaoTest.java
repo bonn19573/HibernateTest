@@ -18,4 +18,10 @@ public class LoginDaoTest extends AbstractTest {
 		
 		
 	}
+	
+	@Test
+	public void testGet(){
+		Login login = dao.get(new LoginPK("matrix", "guorui"));
+		System.out.println(login);
+	}
 }

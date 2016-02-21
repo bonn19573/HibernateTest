@@ -14,6 +14,12 @@ public class Login {
 	
 	
 	
+	public Login() {
+	}
+
+
+
+
 	public Login(LoginPK pk, String password) {
 		this.pk = pk;
 		this.password = password;
