@@ -12,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Version;
 
 import org.hibernate.annotations.ColumnTransformer;
 import org.hibernate.annotations.Formula;
@@ -73,6 +74,9 @@ public class Person {
 
 	@Formula(value = "YEAR(CURDATE()) - YEAR(born_date)")
 	private Integer age;
+	
+	@Version
+	private Integer version;
 
 	public Person() {
 	}
@@ -169,11 +173,22 @@ public class Person {
 	public void setAge(Integer age) {
 		this.age = age;
 	}
+	
+
+	public Integer getVersion() {
+		return version;
+	}
+
+	public void setVersion(Integer version) {
+		this.version = version;
+	}
+
+
 
 	@Override
 	public String toString() {
 		return "Person [personId=" + personId + ", name=" + name + ", fullName=" + fullName + ", gender=" + gender + ", createDate=" + createDate + ", createTime=" + createTime + ", createDateTime="
-				+ createDateTime + ", createDbDateTime=" + createDbDateTime + ", updateDbDateTime=" + updateDbDateTime + ", bornDate=" + bornDate + ", age=" + age + "]";
+				+ createDateTime + ", createDbDateTime=" + createDbDateTime + ", updateDbDateTime=" + updateDbDateTime + ", bornDate=" + bornDate + ", age=" + age + ", version=" + version + "]";
 	}
 
 	@Override
