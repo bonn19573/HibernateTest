@@ -1,5 +1,6 @@
 package com.carrey.HibernateTest.dao;
 
+import java.util.Calendar;
 import java.util.Date;
 
 import org.junit.Test;
@@ -14,21 +15,26 @@ public class PersonDaoTest extends AbstractTest {
 	@Test
 	public void testInsert() {
 		Date today = new Date();
+		Calendar c = Calendar.getInstance();
+		c.set(1983, 4, 2);
+		Date birth = c.getTime();
 		Person person = new Person("guorui",Gender.MALE);
 		person.setCreateDate(today);
 		person.setCreateTime(today);
 		person.setCreateDateTime(today);
+		person.setBornDate(birth);
 		Person person2 = new Person("zhijia",Gender.FEMALE);
 		person2.setCreateDate(today);
 		person2.setCreateTime(today);
 		person2.setCreateDateTime(today);
+		person2.setBornDate(birth);
 		dao.insert(person);
 		dao.insert(person2);
 	}
 	
 	@Test
 	public void testGet(){
-		Person person = dao.get(38);
+		Person person = dao.get(40);
 		System.out.println(person);
 	}
 	

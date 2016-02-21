@@ -13,6 +13,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import org.hibernate.annotations.ColumnTransformer;
+import org.hibernate.annotations.Formula;
 import org.hibernate.annotations.Generated;
 import org.hibernate.annotations.GenerationTime;
 
@@ -57,6 +58,13 @@ public class Person {
 	@Generated(GenerationTime.ALWAYS)
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date updateDbDateTime;
+	
+	@Column(name="born_date")
+	@Temporal(TemporalType.DATE)
+	private Date bornDate;
+	
+	@Formula(value="YEAR(CURDATE()) - YEAR(born_date)")
+	private Integer age;
 
 	public Person() {
 	}
@@ -131,12 +139,31 @@ public class Person {
 	public void setUpdateDbDateTime(Date updateDbDateTime) {
 		this.updateDbDateTime = updateDbDateTime;
 	}
+	
+	
+
+	public Date getBornDate() {
+		return bornDate;
+	}
+
+	public void setBornDate(Date bornDate) {
+		this.bornDate = bornDate;
+	}
+
+	public Integer getAge() {
+		return age;
+	}
+
+	public void setAge(Integer age) {
+		this.age = age;
+	}
 
 	@Override
 	public String toString() {
 		return "Person [personId=" + personId + ", name=" + name + ", gender=" + gender + ", createDate=" + createDate + ", createTime=" + createTime + ", createDateTime=" + createDateTime
-				+ ", createDbDateTime=" + createDbDateTime + ", updateDbDateTime=" + updateDbDateTime + "]";
+				+ ", createDbDateTime=" + createDbDateTime + ", updateDbDateTime=" + updateDbDateTime + ", bornDate=" + bornDate + ", age=" + age + "]";
 	}
+
 
 
 
