@@ -12,6 +12,7 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.hibernate.annotations.ColumnTransformer;
 import org.hibernate.annotations.Generated;
 import org.hibernate.annotations.GenerationTime;
 
@@ -27,6 +28,7 @@ public class Person {
 	private Integer personId;
 
 	@Column
+	@ColumnTransformer(read="lower(name)",write="upper(?)")
 	private String name;
 
 	// @Enumerated(EnumType.STRING)

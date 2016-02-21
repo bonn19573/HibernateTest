@@ -14,11 +14,11 @@ public class PersonDaoTest extends AbstractTest {
 	@Test
 	public void testInsert() {
 		Date today = new Date();
-		Person person = new Person("GR",Gender.MALE);
+		Person person = new Person("guorui",Gender.MALE);
 		person.setCreateDate(today);
 		person.setCreateTime(today);
 		person.setCreateDateTime(today);
-		Person person2 = new Person("czj",Gender.FEMALE);
+		Person person2 = new Person("zhijia",Gender.FEMALE);
 		person2.setCreateDate(today);
 		person2.setCreateTime(today);
 		person2.setCreateDateTime(today);
@@ -28,7 +28,7 @@ public class PersonDaoTest extends AbstractTest {
 	
 	@Test
 	public void testGet(){
-		Person person = dao.get(36);
+		Person person = dao.get(38);
 		System.out.println(person);
 	}
 	
