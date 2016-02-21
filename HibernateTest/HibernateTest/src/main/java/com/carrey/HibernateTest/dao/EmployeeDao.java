@@ -3,8 +3,8 @@ package com.carrey.HibernateTest.dao;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import com.carrey.HibernateTest.Certificate;
-import com.carrey.HibernateTest.Employee;
+import com.carrey.HibernateTest.dojo.Certificate;
+import com.carrey.HibernateTest.dojo.Employee;
 
 public class EmployeeDao extends AbstractDao<Employee, Long> {
 

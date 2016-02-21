@@ -1,4 +1,4 @@
-package com.carrey.HibernateTest;
+package com.carrey.HibernateTest.dojo;
 
 import java.util.Set;
 
