@@ -2,6 +2,8 @@ package com.carrey.HibernateTest.dojo;
 
 import java.util.Date;
 
+import javax.persistence.Access;
+import javax.persistence.AccessType;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Convert;
@@ -25,6 +27,7 @@ import com.carrey.HibernateTest.converter.GenderConverter;
 
 @Entity
 @Table(name = "person")
+@Access(AccessType.FIELD)
 public class Person {
 	
 	@NaturalId
