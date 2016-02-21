@@ -5,8 +5,8 @@ import java.util.Set;
 
 import org.junit.Test;
 
-import com.carrey.HibernateTest.Certificate;
-import com.carrey.HibernateTest.Employee;
+import com.carrey.HibernateTest.dojo.Certificate;
+import com.carrey.HibernateTest.dojo.Employee;
 
 public class EmployeeDaoTest extends AbstractTest {
 

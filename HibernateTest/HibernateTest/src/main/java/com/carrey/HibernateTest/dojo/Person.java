@@ -12,38 +12,49 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.hibernate.annotations.Generated;
+import org.hibernate.annotations.GenerationTime;
+
 import com.carrey.HibernateTest.converter.GenderConverter;
 
 @Entity
-@Table(name="person")
+@Table(name = "person")
 public class Person {
-	
+
 	@Id
 	@GeneratedValue
-	@Column(name="person_id")
+	@Column(name = "person_id")
 	private Integer personId;
-	
+
 	@Column
 	private String name;
-	
-//	@Enumerated(EnumType.STRING)
+
+	// @Enumerated(EnumType.STRING)
 	@Basic
-	@Convert(converter=GenderConverter.class)
+	@Convert(converter = GenderConverter.class)
 	private Gender gender;
-	
-	
+
 	@Temporal(TemporalType.DATE)
-	@Column(name="create_date")
+	@Column(name = "create_date")
 	private Date createDate;
-	
-	@Column(name="create_time")
+
+	@Column(name = "create_time")
 	@Temporal(TemporalType.TIME)
 	private Date createTime;
-	
-	@Column(name="create_datetime")
+
+	@Column(name = "create_datetime")
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date createDateTime;
-	
+
+	@Column(name = "create_db_datetime", insertable = false)
+	@Generated(GenerationTime.INSERT)
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date createDbDateTime;
+
+	@Column(name = "update_db_datetime", updatable = false, insertable = false)
+	@Generated(GenerationTime.ALWAYS)
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date updateDbDateTime;
 
 	public Person() {
 	}
@@ -76,8 +87,6 @@ public class Person {
 	public void setGender(Gender gender) {
 		this.gender = gender;
 	}
-	
-	
 
 	public Date getCreateDate() {
 		return createDate;
@@ -102,20 +111,31 @@ public class Person {
 	public void setCreateDateTime(Date createDateTime) {
 		this.createDateTime = createDateTime;
 	}
+	
+	
+
+	public Date getCreateDbDateTime() {
+		return createDbDateTime;
+	}
+
+	public void setCreateDbDateTime(Date createDbDateTime) {
+		this.createDbDateTime = createDbDateTime;
+	}
+
+	public Date getUpdateDbDateTime() {
+		return updateDbDateTime;
+	}
+
+	public void setUpdateDbDateTime(Date updateDbDateTime) {
+		this.updateDbDateTime = updateDbDateTime;
+	}
 
 	@Override
 	public String toString() {
-		return "Person [personId=" + personId + ", name=" + name + ", gender=" + gender + ", createDate=" + createDate + ", createTime=" + createTime + ", createDateTime=" + createDateTime + "]";
+		return "Person [personId=" + personId + ", name=" + name + ", gender=" + gender + ", createDate=" + createDate + ", createTime=" + createTime + ", createDateTime=" + createDateTime
+				+ ", createDbDateTime=" + createDbDateTime + ", updateDbDateTime=" + updateDbDateTime + "]";
 	}
 
 
-	
-	
-	
-	
 
 }
-
-
-
-

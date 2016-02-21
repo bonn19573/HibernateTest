@@ -28,7 +28,16 @@ public class PersonDaoTest extends AbstractTest {
 	
 	@Test
 	public void testGet(){
-		Person person = dao.get(24);
+		Person person = dao.get(36);
+		System.out.println(person);
+	}
+	
+	@Test
+	public void testUpdate(){
+		Person person = dao.get(36);
+		person.setName("CCC");
+		dao.update(person);
+		
 		System.out.println(person);
 	}
 
