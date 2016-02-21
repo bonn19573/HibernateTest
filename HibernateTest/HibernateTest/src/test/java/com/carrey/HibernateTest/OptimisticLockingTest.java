@@ -18,7 +18,7 @@ public class OptimisticLockingTest {
 		session.beginTransaction();
 		Person person = session.get(Person.class, 44);
 		
-		person.setName("Guo Rui5");
+		person.setName("Guo Rui7");
 		session.save(person);
 		
 		try {
@@ -41,7 +41,7 @@ public class OptimisticLockingTest {
 		session2.beginTransaction();
 		Person person2 = session2.get(Person.class, 44);
 		
-		person2.setName("Guo Rui6");
+		person2.setName("Guo Rui8");
 		session2.save(person2);
 
 		session2.getTransaction().commit();

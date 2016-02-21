@@ -34,6 +34,7 @@
 		<mapping class="com.carrey.HibernateTest.dojo.Employee"/>
 		<mapping class="com.carrey.HibernateTest.dojo.Certificate"/>
 		<mapping class="com.carrey.HibernateTest.dojo.Person"/>
+		<mapping class="com.carrey.HibernateTest.dojo.Login"/>
 
 	</session-factory>
 </hibernate-configuration>
