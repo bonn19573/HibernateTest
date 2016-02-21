@@ -6,6 +6,7 @@ import java.util.Date;
 import org.junit.Test;
 
 import com.carrey.HibernateTest.dojo.Gender;
+import com.carrey.HibernateTest.dojo.Name;
 import com.carrey.HibernateTest.dojo.Person;
 
 public class PersonDaoTest extends AbstractTest {
@@ -23,18 +24,20 @@ public class PersonDaoTest extends AbstractTest {
 		person.setCreateTime(today);
 		person.setCreateDateTime(today);
 		person.setBornDate(birth);
+		person.setFullName(new Name("guo","rui"));
 		Person person2 = new Person("zhijia",Gender.FEMALE);
 		person2.setCreateDate(today);
 		person2.setCreateTime(today);
 		person2.setCreateDateTime(today);
 		person2.setBornDate(birth);
+		person2.setFullName(new Name("chen","zhi"));
 		dao.insert(person);
 		dao.insert(person2);
 	}
 	
 	@Test
 	public void testGet(){
-		Person person = dao.get(40);
+		Person person = dao.get(42);
 		System.out.println(person);
 	}
 	

@@ -5,6 +5,7 @@ import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Convert;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -29,8 +30,11 @@ public class Person {
 	private Integer personId;
 
 	@Column
-	@ColumnTransformer(read="lower(name)",write="upper(?)")
+	@ColumnTransformer(read = "lower(name)", write = "upper(?)")
 	private String name;
+
+	@Embedded
+	private Name fullName;
 
 	// @Enumerated(EnumType.STRING)
 	@Basic
@@ -58,12 +62,12 @@ public class Person {
 	@Generated(GenerationTime.ALWAYS)
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date updateDbDateTime;
-	
-	@Column(name="born_date")
+
+	@Column(name = "born_date")
 	@Temporal(TemporalType.DATE)
 	private Date bornDate;
-	
-	@Formula(value="YEAR(CURDATE()) - YEAR(born_date)")
+
+	@Formula(value = "YEAR(CURDATE()) - YEAR(born_date)")
 	private Integer age;
 
 	public Person() {
@@ -88,6 +92,14 @@ public class Person {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public Name getFullName() {
+		return fullName;
+	}
+
+	public void setFullName(Name fullName) {
+		this.fullName = fullName;
 	}
 
 	public Gender getGender() {
@@ -121,8 +133,6 @@ public class Person {
 	public void setCreateDateTime(Date createDateTime) {
 		this.createDateTime = createDateTime;
 	}
-	
-	
 
 	public Date getCreateDbDateTime() {
 		return createDbDateTime;
@@ -139,8 +149,6 @@ public class Person {
 	public void setUpdateDbDateTime(Date updateDbDateTime) {
 		this.updateDbDateTime = updateDbDateTime;
 	}
-	
-	
 
 	public Date getBornDate() {
 		return bornDate;
@@ -160,11 +168,8 @@ public class Person {
 
 	@Override
 	public String toString() {
-		return "Person [personId=" + personId + ", name=" + name + ", gender=" + gender + ", createDate=" + createDate + ", createTime=" + createTime + ", createDateTime=" + createDateTime
-				+ ", createDbDateTime=" + createDbDateTime + ", updateDbDateTime=" + updateDbDateTime + ", bornDate=" + bornDate + ", age=" + age + "]";
+		return "Person [personId=" + personId + ", name=" + name + ", fullName=" + fullName + ", gender=" + gender + ", createDate=" + createDate + ", createTime=" + createTime + ", createDateTime="
+				+ createDateTime + ", createDbDateTime=" + createDbDateTime + ", updateDbDateTime=" + updateDbDateTime + ", bornDate=" + bornDate + ", age=" + age + "]";
 	}
-
-
-
 
 }
