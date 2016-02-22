@@ -1,10 +1,11 @@
 package com.carrey.HibernateTest.pojo;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 @Entity
 public class StockDetail {
@@ -13,8 +14,8 @@ public class StockDetail {
 	@GeneratedValue
 	private Integer id;
 	
-	@ManyToOne
-	@PrimaryKeyJoinColumn
+	@OneToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name="stock_id")
 	private Stock stock;
 
 	public Integer getId() {
@@ -35,9 +36,10 @@ public class StockDetail {
 
 	@Override
 	public String toString() {
-		return "StockDetail [id=" + id + ", stock=" + stock + "]";
+		return "StockDetail [id=" + id + "]";
 	}
-	
+
+
 	
 
 }

@@ -1,5 +1,8 @@
 package com.carrey.HibernateTest;
 
+import java.util.List;
+
+import org.hibernate.Query;
 import org.junit.Test;
 
 import com.carrey.HibernateTest.pojo.assosiation.People;
@@ -20,6 +23,15 @@ public class BidirectionOneToManyTest extends AbstractTest {
 		
 		people.removePhone(phone);
 		
+	}
+	
+	@Test
+	public void testList(){
+		Query createQuery = session.createQuery("from People");
+		List<People> list = createQuery.list();
+		for (People people : list) {
+			System.out.println(people);
+		}
 	}
 
 }
