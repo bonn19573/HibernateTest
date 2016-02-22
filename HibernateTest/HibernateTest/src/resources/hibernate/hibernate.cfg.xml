@@ -37,6 +37,8 @@
 		<mapping class="com.carrey.HibernateTest.pojo.Login"/>
 		<mapping class="com.carrey.HibernateTest.pojo.PersonDetail"/>
 		<mapping class="com.carrey.HibernateTest.pojo.UUIDEntity"/>
+		<mapping class="com.carrey.HibernateTest.pojo.Stock"/>
+		<mapping class="com.carrey.HibernateTest.pojo.StockDetail"/>
 
 	</session-factory>
 </hibernate-configuration>
