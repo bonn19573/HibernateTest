@@ -42,6 +42,7 @@
 		
 		<mapping class="com.carrey.HibernateTest.pojo.assosiation.People"/>
 		<mapping class="com.carrey.HibernateTest.pojo.assosiation.Phone"/>
+		<mapping class="com.carrey.HibernateTest.pojo.assosiation.House"/>
 
 	</session-factory>
 </hibernate-configuration>
