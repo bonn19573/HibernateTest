@@ -6,7 +6,7 @@ import java.util.Set;
 import org.hibernate.Session;
 import org.junit.Test;
 
-import com.carrey.HibernateTest.dojo.Person;
+import com.carrey.HibernateTest.pojo.Person;
 import com.carrey.HibernateTest.util.HibernateUtil;
 
 public class EqualsHashCodeTest extends AbstractTest {

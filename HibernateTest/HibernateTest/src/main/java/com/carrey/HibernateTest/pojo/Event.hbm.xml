@@ -3,7 +3,7 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 2016-2-19 23:47:13 by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
-    <class name="com.carrey.HibernateTest.dojo.Event" table="EVENT">
+    <class name="com.carrey.HibernateTest.pojo.Event" table="EVENT">
         <id name="event_id" type="int">
             <column name="EVENT_ID" />
             <generator class="increment" />

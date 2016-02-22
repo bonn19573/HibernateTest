@@ -10,8 +10,8 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.carrey.HibernateTest.dojo.Address;
-import com.carrey.HibernateTest.dojo.Student;
+import com.carrey.HibernateTest.pojo.Address;
+import com.carrey.HibernateTest.pojo.Student;
 
 public class StudentTest {
 	private SessionFactory factory;

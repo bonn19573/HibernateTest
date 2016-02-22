@@ -1,4 +1,4 @@
-package com.carrey.HibernateTest.dojo;
+package com.carrey.HibernateTest.pojo;
 
 // default package
 // Generated 2016-2-19 23:27:16 by Hibernate Tools 4.3.1.Final

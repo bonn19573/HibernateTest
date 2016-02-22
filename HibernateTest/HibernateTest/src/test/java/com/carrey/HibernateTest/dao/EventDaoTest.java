@@ -6,7 +6,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import com.carrey.HibernateTest.AbstractTest;
-import com.carrey.HibernateTest.dojo.Event;
+import com.carrey.HibernateTest.pojo.Event;
 
 public class EventDaoTest extends AbstractTest {
 	

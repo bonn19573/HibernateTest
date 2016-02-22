@@ -3,7 +3,7 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 2016-1-30 13:12:34 by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
-    <class name="com.carrey.HibernateTest.dojo.Student" table="STUDENT">
+    <class name="com.carrey.HibernateTest.pojo.Student" table="STUDENT">
         <id name="sid" type="int" access="field">
             <column name="SID" />
             <generator class="assigned" />
@@ -17,7 +17,7 @@
         <property name="birth" type="java.util.Date" access="field">
             <column name="BIRTH" />
         </property>
-        <component name="address" class="com.carrey.HibernateTest.dojo.Address">
+        <component name="address" class="com.carrey.HibernateTest.pojo.Address">
         	<property name="phone" type="string" column="PHONE" />
         	<property name="postCode" type="string" column="POSTCODE" />
         	<property name="address" type="string" column="ADDRESS" />

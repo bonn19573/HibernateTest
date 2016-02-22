@@ -1,6 +1,6 @@
 package com.carrey.HibernateTest.dao;
 
-import com.carrey.HibernateTest.dojo.Person;
+import com.carrey.HibernateTest.pojo.Person;
 
 public class PersonDao extends AbstractDao<Person, Integer> {
 

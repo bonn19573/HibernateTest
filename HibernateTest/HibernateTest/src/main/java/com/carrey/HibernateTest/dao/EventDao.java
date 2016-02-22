@@ -1,6 +1,6 @@
 package com.carrey.HibernateTest.dao;
 
-import com.carrey.HibernateTest.dojo.Event;
+import com.carrey.HibernateTest.pojo.Event;
 
 public class EventDao extends AbstractDao<Event, Integer> {
 

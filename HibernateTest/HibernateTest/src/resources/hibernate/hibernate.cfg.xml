@@ -30,11 +30,13 @@
 		<!-- List of XML mapping files -->
 		<!-- <mapping resource="Employee.hbm.xml" /> -->
 		<mapping resource="Student.hbm.xml" />
-		<mapping resource="com/carrey/HibernateTest/dojo/Event.hbm.xml"/>
-		<mapping class="com.carrey.HibernateTest.dojo.Employee"/>
-		<mapping class="com.carrey.HibernateTest.dojo.Certificate"/>
-		<mapping class="com.carrey.HibernateTest.dojo.Person"/>
-		<mapping class="com.carrey.HibernateTest.dojo.Login"/>
+		<mapping resource="com/carrey/HibernateTest/pojo/Event.hbm.xml"/>
+		<mapping class="com.carrey.HibernateTest.pojo.Employee"/>
+		<mapping class="com.carrey.HibernateTest.pojo.Certificate"/>
+		<mapping class="com.carrey.HibernateTest.pojo.Person"/>
+		<mapping class="com.carrey.HibernateTest.pojo.Login"/>
+		<mapping class="com.carrey.HibernateTest.pojo.PersonDetail"/>
+		<mapping class="com.carrey.HibernateTest.pojo.UUIDEntity"/>
 
 	</session-factory>
 </hibernate-configuration>

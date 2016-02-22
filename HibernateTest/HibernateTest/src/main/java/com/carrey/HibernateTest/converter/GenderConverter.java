@@ -2,7 +2,7 @@ package com.carrey.HibernateTest.converter;
 
 import javax.persistence.AttributeConverter;
 
-import com.carrey.HibernateTest.dojo.Gender;
+import com.carrey.HibernateTest.pojo.Gender;
 
 public class GenderConverter implements AttributeConverter<Gender, Character> {
 

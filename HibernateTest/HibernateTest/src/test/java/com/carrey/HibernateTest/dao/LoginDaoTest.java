@@ -3,8 +3,8 @@ package com.carrey.HibernateTest.dao;
 import org.junit.Test;
 
 import com.carrey.HibernateTest.AbstractTest;
-import com.carrey.HibernateTest.dojo.Login;
-import com.carrey.HibernateTest.dojo.LoginPK;
+import com.carrey.HibernateTest.pojo.Login;
+import com.carrey.HibernateTest.pojo.LoginPK;
 
 public class LoginDaoTest extends AbstractTest {
 	

@@ -1,4 +1,4 @@
-package com.carrey.HibernateTest.dojo;
+package com.carrey.HibernateTest.pojo;
 
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
