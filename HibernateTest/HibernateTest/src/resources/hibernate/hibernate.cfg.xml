@@ -43,6 +43,23 @@
 		<mapping class="com.carrey.HibernateTest.pojo.assosiation.People"/>
 		<mapping class="com.carrey.HibernateTest.pojo.assosiation.Phone"/>
 		<mapping class="com.carrey.HibernateTest.pojo.assosiation.House"/>
+		
+		<mapping class="com.carrey.HibernateTest.pojo.naturalid.Company"/>
+		<mapping class="com.carrey.HibernateTest.pojo.naturalid.PostalCarrier"/>
+		
+<!-- 		<mapping class="com.carrey.HibernateTest.pojo.inheritance.CreditAccount"/> -->
+<!-- 		<mapping class="com.carrey.HibernateTest.pojo.inheritance.DebitAccount"/> -->
+<!-- 		<mapping class="com.carrey.HibernateTest.pojo.inheritance.Inheritance"/> -->
+<!-- 		<mapping class="com.carrey.HibernateTest.pojo.inheritance.Inheritance$CreditAccount"/> -->
+<!-- 		<mapping class="com.carrey.HibernateTest.pojo.inheritance.Inheritance$DebitAccount"/> -->
+<!-- 		<mapping class="com.carrey.HibernateTest.pojo.inheritance.JoinTable"/> -->
+<!-- 		<mapping class="com.carrey.HibernateTest.pojo.inheritance.JoinTable$CreditAccount"/> -->
+<!-- 		<mapping class="com.carrey.HibernateTest.pojo.inheritance.JoinTable$DebitAccount"/> -->
+		<mapping class="com.carrey.HibernateTest.pojo.inheritance.TablePerClass"/>
+		<mapping class="com.carrey.HibernateTest.pojo.inheritance.TablePerClass$DebitAccount"/>
+		<mapping class="com.carrey.HibernateTest.pojo.inheritance.TablePerClass$CreditAccount"/>
+		
+		
 
 	</session-factory>
 </hibernate-configuration>
